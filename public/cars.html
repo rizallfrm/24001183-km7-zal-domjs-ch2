@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHALLENGE - 2</title>
+
+    <!-- Boostrap -->
+    <!-- <link rel="stylesheet" href="/challenge-2/bootstrap/css/bootstrap.min.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.new.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+</head>
+
+<body>
+    <!-- HERO SECTION -->
+    <section id="hero-section">
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg custom-navbar">
+            <div class="container-fluid">
+                <img src="./images/logo.svg" class="img-fluid" alt="...">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <div class="d-flex justify-content-between align-items-center ">
+                            <h2 class="nav-link fw-bold pb-3 d-md-none font-bcr">BCR</h2>
+                            <img src="./images//fi_x.svg" alt="Close" class="close-btn d-md-none me-3"
+                                data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+                        </div>
+
+                        <a class="nav-link me-4 fw-light" aria-current="page" href="#our-section">Our Services</a>
+                        <a class="nav-link me-4 fw-light" href="#why-us-section">Why Us</a>
+                        <a class="nav-link me-4 fw-light" href="#testimonial-section">Testimonial</a>
+                        <a class="nav-link me-4 fw-light" href="#faq-section">FAQ</a>
+                        <a class="btn btn-success fw-bold">Register</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div>
+            <section class="pt-5 pt-md-11 custom-section">
+                <div class="container py-4">
+                    <div class="row align-items-center">
+                        <!-- TEKS -->
+                        <div class="col-12 col-md-7 col-lg-6 order-1 order-md-1">
+                            <h1 class="header-text nav-link  text-md-start pb-3 fw-bold fs-1">
+                                Sewa & Rental Mobil Terbaik di kawasan (Lokasimu)
+                            </h1>
+                            <p class="nav-link text-md-start text-body-secondary mb-6 mb-lg-8 pt-2 fw-light pb-4">
+                                Selamat datang di Binar Car Rental. Kami menyediakan mobil kualitas terbaik dengan harga
+                                terjangkau. Selalu siap melayani kebutuhanmu untuk sewa mobil selama 24 jam.
+                            </p>
+                            <div class="nav-link text-md-start pb-5">
+                                <a href="#" class="btn btn-success fw-bold me-1 mb-2 mb-md-0">
+                                    Mulai Sewa Mobil
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- IMAGE CAR -->
+                        <div class="col-12 col-md-5 col-lg-6 order-2 order-md-2">
+                            <div class="img-container-car">
+                                <img src="./images/img_car.png" class="img-fluid mw-lg-130 mb-6 mb-md-0 mb-6" alt="...">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    <!-- Search -->
+    <section class="search">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-12">
+                    <div class="row search__card mx-lg-5 py-3 px-4">
+                        <div class="col-lg-auto col-xl-2 col-xxl-3 col-md-auto">
+                            <label class="fw-light">Tipe Driver</label>
+                            <select class="form-select" aria-label="Default select example" id="driver-type">
+                                <option value="default" selected>Pilih Tipe Driver &nbsp; &nbsp; &nbsp; &nbsp; </option>
+                                <option value="true">Dengan Supir</option>
+                                <option value="false">Tanpa Supir (Lepas Kunci)</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-auto col-xl-auto col-md-auto">
+                            <label class="fw-light">Tanggal</label>
+                            <input type="date" class="form-control" placeholder="Pilih Tanggal" id="pickup-date">
+                        </div>
+                        <div class="col-lg-auto col-xl-auto col-md-auto search__time">
+                            <labe class="fw-light">Waktu Jemput/Ambil</labe>
+                            <select class="form-select" aria-label="Default select example" id="pickup-time">
+                                <option value="false" selected>Pilih Waktu &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                </option>
+                                <option value="08:00">08.00 WIB</option>
+                                <option value="09:00">09.00 WIB</option>
+                                <option value="10:00">10.00 WIB</option>
+                                <option value="11:00">11.00 WIB</option>
+                                <option value="12:00">12.00 WIB</option>
+                            </select>
+
+                        </div>
+                        <div class="col-lg-auto col-xl-auto col-md-auto">
+                            <label class="fw-light">Jumlah Penumpang (optional)</label>
+                            <div class="input-group">
+                                <input type="search" class="form-control border-end-0" placeholder="Jumlah Penumpang"
+                                    id="passenger-count" value="0">
+                                <span class="input-group-text bg-white">
+                                    <img src="images/fi_users.png" width="20px" alt="">
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-xl-auto col-md-2  pt-4">
+                            <button class="btn btn-utama" id="load-btn">Cari Mobil</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cars">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-11 ">
+                    <div class="row" id="cars-container">
+                        <!-- <div class="col-lg-4">
+                            <div class="card  px-2 py-4">
+                                <img src="images/cars.png" class="card-img-top mt-4 text-center">
+                                <div class="card-body">
+                                    <h5 class="card-title fs-6">Nama/Tipe Mobil</h5>
+                                    <h5 class="card-title fs-5 fw-bold">Rp 430.000 / hari</h5>
+                                    <p class="cars__p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <img src="images/fi_users1.png" width="20px" alt="" srcset="">
+                                        </div>
+                                        <div class="col-10 ms-lg-2">
+                                            4 orang
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col-1">
+                                            <img src="images/fi_settings.png" width="20px" alt="" srcset="">
+                                        </div>
+                                        <div class="col-10 ms-lg-2">
+                                            Manual
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2 mb-4">
+                                        <div class="col-1">
+                                            <img src="images/fi_calendar.png" width="20px" alt="" srcset="">
+                                        </div>
+                                        <div class="col-10 ms-lg-2">
+                                            Tahun 2020
+                                        </div>
+                                    </div>
+
+                                    <a href="#" class="btn btn-utama" style="width:100%">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mx-auto">
+                    <p class="fw-light">Jalan Suroyo No. 161 Mayangan Kota Probolonggo 672000 </p>
+                    <p class="fw-light">binarcarrental@gmail.com </p class="fw-light">
+                    <p>081-233-334-808</p>
+                </div>
+                <div class="col-md-3 mx-auto">
+                    <p>Our services</p>
+                    <p>Why Us</p>
+                    <p>Testimonial</p>
+                    <p>FAQ</p>
+                </div>
+                <div class="col-md-3 mx-auto">
+                    <p class="fw-light">Connect With Us</p>
+                    <p><img class="mx-1" src="images/icon_facebook.svg" alt="">
+                        <img class="mx-1" src="images/icon_instagram.svg" alt="">
+                        <img class="mx-1" src="images/icon_twitter.svg" alt="">
+                        <img class="mx-1" src="images/icon_mail.svg" alt="">
+                        <img class="mx-1" src="images/icon_twitch.svg" alt="">
+                    </p>
+                </div>
+                <div class="col-md-3 mx-auto">
+                    <p>Copyright Binar 2022</p><img src="images/logo.svg" alt="" width="100px">
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Script -->
+    <script src="/challenge-2/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="scripts/nice-select2/dist/js/nice-select2.js"></script>
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js "
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3 " crossorigin="anonymous ">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js "
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD " crossorigin="anonymous ">
+        </script>
+
+    <!-- Example Javascript -->
+    <script type="text/javascript" src="scripts/binar.js"></script>
+    <script type="text/javascript" src="scripts/app.example.js"></script>
+    <script type="text/javascript" src="scripts/car.example.js"></script>
+    <script type="text/javascript" src="scripts/main.example.js"></script>
+</body>
+
+</html>
