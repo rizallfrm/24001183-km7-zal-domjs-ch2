@@ -16,8 +16,36 @@ class App {
         // Register click listener
         // this.clearButton.onclick = this.clear;
         // this.loadButton.onclick = this.run;
+
+        // Add an event listener for each input to check the status of the load button.
+        this.driverType.addEventListener('change', this.checkMandatoryFields);
+        this.pickupDate.addEventListener('input', this.checkMandatoryFields);
+        this.pickupTime.addEventListener('input', this.checkMandatoryFields);
+
+        this.loadButton.addEventListener('click', async () => {
+            if (!this.loadButton.disabled) {
+                await this.loadFilter();
+            }
+        });
+        this.clearButton.addEventListener('click', this.clear);
     }
 
+    // Function to check field mandatory
+    checkMandatoryFields = () => {
+        const isDriverTypeFilled = this.driverType !== 'defaullt';
+        const isPickupDateFilled = this.pickupDate !== '';
+        const isPickupTimeFilled = this.pickupTime !== '';
+
+        // If all mandatory fields are filled, enable the load button
+        if (isDriverTypeFilled && isPickupDateFilled && isPickupTimeFilled) {
+            this.loadButton.disabled = false;
+        } else {
+            this.loadButton.disabled = true;
+        }
+    };
+
+
+    // Function for view the all cars
     run = () => {
         Car.list.forEach((car) => {
             const node = document.createElement("div");
@@ -42,6 +70,8 @@ class App {
             const withoutDriver = this.driverType.value === 'false' && !data.available;
             const hasEnoughSeats = data.capacity >= this.passengerCount.value;
 
+            // return (availableWithDriver || withoutDriver) && isTImeValid && hasEnoughSeats;
+
             if (this.driverType.value !== 'default' && this.pickupDate.value && this.pickupTime.value && this.passengerCount.value >= 0) {
                 return (availableWithDriver || withoutDriver) && isTimeValid && hasEnoughSeats;
             } else if (this.driverType.value !== 'default' && this.passengerCount.value > 0) {
@@ -59,9 +89,11 @@ class App {
 
         console.log(cars);
         Car.init(cars);
+        this.run();
     }
 
     clear = () => {
+        console.log("clear the button")
         let child = this.carContainerElement.firstElementChild;
 
         while (child) {
